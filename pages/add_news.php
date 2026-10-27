@@ -18,7 +18,7 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
 <form action="index.php?=insert_news.php" method="POST" enctype="multipart/form-data">
     <div class="form-field">
         <label for="" class="form-label">Jenis Berita</label>
-        <select name="" id="" class="form-control">
+        <select name="jenis_berita" id="" class="form-control">
             <option disabled>-- PILIH JENIS BERITA --</option>
 
             <?php foreach ($enumValues as $value): ?>
