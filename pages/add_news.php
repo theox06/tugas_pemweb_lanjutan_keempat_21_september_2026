@@ -42,9 +42,6 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
         <label for="" class="form-label">Penulis</label>
         <input type="text" name="penulis" class="form-control">
 
-        <label for="" class="form-label">Waktu Publikasi</label>
-        <input type="datetime-local" class="form-control">
-
         <button type="submit" class="btn-class btn-solid theme-primary">Kirim</button>
         
     </div>

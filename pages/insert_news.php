@@ -39,9 +39,8 @@ $thumbnailPath = 'photos/' . $filename;
 $headline = $_POST['headline'];
 $konten = $_POST['konten'];
 $penulis = $_POST['penulis'];
-$waktu_publikasi = $_POST['waktu_publikasi'];
 
-mysqli_query($koneksi, "INSERT INTO berita_pengumuman VALUES('', '$jenis_berita', '$thumbnailPath', '$headline', '$konten', '$penulis', '$waktu_publikasi')");
+mysqli_query($koneksi, "INSERT INTO berita_pengumuman VALUES(NULL, '$jenis_berita', '$thumbnailPath', '$headline', '$konten', '$penulis', NOW())");
 
 header("location:../index.php");
 
