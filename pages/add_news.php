@@ -3,7 +3,8 @@ require_once __DIR__ . '/../koneksi.php';
 
 $sql = "SHOW COLUMNS FROM `berita_pengumuman` LIKE 'jenis_berita'";
 
-$column = $pdo->query($sql)->fetch();
+$result = mysqli_query($koneksi, $sql);
+$column = mysqli_fetch_assoc($result);
 
 $enumValues = [];
 
@@ -15,7 +16,7 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
 
 ?>
 
-<form action="index.php?=insert_news.php" method="POST" enctype="multipart/form-data">
+<form action="pages/insert_news.php" method="POST" enctype="multipart/form-data">
     <div class="form-field">
         <label for="" class="form-label">Jenis Berita</label>
         <select name="jenis_berita" id="" class="form-control">
@@ -36,10 +37,15 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
         <input type="text" name="headline" class="form-control">
 
         <label for="" class="form-label">Konten</label>
-        <textarea name="" id="" class="form-control"></textarea>
+        <textarea name="konten" id="konten" class="form-control"></textarea>
 
         <label for="" class="form-label">Penulis</label>
         <input type="text" name="penulis" class="form-control">
+
+        <label for="" class="form-label">Waktu Publikasi</label>
+        <input type="datetime-local" class="form-control">
+
+        <button type="submit" class="btn-class btn-solid theme-primary">Kirim</button>
         
     </div>
 </form>
