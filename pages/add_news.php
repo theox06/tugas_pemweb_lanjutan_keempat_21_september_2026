@@ -16,7 +16,7 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
 
 ?>
 
-<form action="pages/insert_news.php" method="POST" enctype="multipart/form-data">
+<form id="newsForm" action="pages/insert_news.php" method="POST" enctype="multipart/form-data">
     <div class="form-field">
         <label for="" class="form-label">Jenis Berita</label>
         <select name="jenis_berita" id="" class="form-control">
@@ -37,12 +37,18 @@ if ($column && preg_match('/^enum\((.*)\)$/i', $column['Type'], $matches)) {
         <input type="text" name="headline" class="form-control">
 
         <label for="" class="form-label">Konten</label>
-        <textarea name="konten" id="konten" class="form-control"></textarea>
+        <div id="editor" style="height: 300px;"></div>
+        <input   type="hidden" name="konten" id="editor"></textarea>
 
         <label for="" class="form-label">Penulis</label>
         <input type="text" name="penulis" class="form-control">
 
         <button type="submit" class="btn-class btn-solid theme-primary">Kirim</button>
+
+
+
+        
+        
         
     </div>
 </form>
