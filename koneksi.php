@@ -2,7 +2,9 @@
 $dbHost = 'localhost';
 $dbName = 'pemweb_lanjutan_minggu_keempat';
 $dbUser = 'admin';
-$dbPassword = 'passwordkuat123';
+$dbPassword = '';
+
+// untuk password menyesuaikan dengan database, jika default nya kosongan dikosongkan saja
 
 $pdo = new PDO(
     "mysql:host={$dbHost};dbname={$dbName};charset=utf8mb4",
