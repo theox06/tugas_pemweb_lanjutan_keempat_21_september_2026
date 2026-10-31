@@ -33,11 +33,6 @@ $isActive = static fn(string $target): string =>
 
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a 
-                                <?= $currentPage === 'article' ?> href="index.php?page=article" class="nav-link <?= $isActive('article') ?>"
-                                aria-current="page">Artikel</a>
-                        </li>
                     </ul>
                 </div>
             </dialog>
