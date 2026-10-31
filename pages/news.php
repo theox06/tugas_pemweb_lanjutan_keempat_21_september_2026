@@ -58,7 +58,7 @@ $beritaPengumuman = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card w-100" style="max-width: 320px;">
                             <img src="<?= htmlspecialchars($data['thumbnail']) ?>" alt="" class="card-img-top" style="height: 160px; object-fit: cover;"></style>
                             <div class="card-body">
-                                <a href="" class="btn-solid theme-warning">Edit Berita</a>
+                                <a href="index.php?page=edit_news&id=<?= (int) $data['id'] ?>" class="btn-solid theme-warning">Edit Berita</a>
                                 <h4 class="card-title"><?= htmlspecialchars($data['headline']) ?></h4>
                                 <p class="card-text"><?= htmlspecialchars($kontenRingkas, ENT_QUOTES, 'UTF-8') ?></p>
                             </div>
@@ -66,7 +66,7 @@ $beritaPengumuman = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <p class="card-text">Ditulis oleh: <b><?= htmlspecialchars($data['penulis']) ?></b></p>
                                 <div class="d-flex justify-content-between align-items-center gap-2">
                                     <a href="index.php?page=view_news&amp;id=<?= (int) $data['id'] ?>" class="btn-solid theme-primary">Baca selengkapnya</a>
-                                    <a href="" class="btn-solid theme-danger">Hapus Berita</a>
+                                    <a href="pages/delete_news.php?id=<?= (int) $data['id'] ?>" class="btn-solid theme-danger" onclick="return confirm('Apakah anda ingin menghapus berita ini?')">Hapus Berita</a>
                                 </div>
                             </div>
                         </div>

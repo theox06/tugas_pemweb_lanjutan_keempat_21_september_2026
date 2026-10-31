@@ -36,12 +36,14 @@ if (!move_uploaded_file(
 
 $thumbnailPath = 'photos/' . $filename;
 
-$headline = $_POST['headline'];
-$konten = $_POST['konten'];
-$penulis = $_POST['penulis'];
+$headline = mysqli_real_escape_string($koneksi, $_POST['headline']);
+$konten = mysqli_real_escape_string($koneksi, $_POST['konten']);
+$penulis = mysqli_real_escape_string($koneksi, $_POST['penulis']);
 
 mysqli_query($koneksi, "INSERT INTO berita_pengumuman VALUES(NULL, '$jenis_berita', '$thumbnailPath', '$headline', '$konten', '$penulis', NOW())");
 
 header("location:../index.php");
+
+exit;
 
 ?>

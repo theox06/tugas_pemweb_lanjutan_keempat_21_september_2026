@@ -76,8 +76,10 @@
                 >
             <?php endif; ?>
 
-            <div class="article-content">
-                <?= nl2br(htmlspecialchars($berita['konten'] ?? '', ENT_QUOTES, 'UTF-8')) ?>
+            <div class="article-content ql-snow" id="konten">
+                <div class="ql-editor p-0">
+                    <?= $berita['konten'] ?? '' ?>
+                </div>
             </div>
         </article>
 
